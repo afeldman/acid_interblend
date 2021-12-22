@@ -1,8 +1,8 @@
 package main
 
 import (
+	"acid_interblend/acid"
 	"fmt"
-	"math"
 
 	"gopkg.in/alecthomas/kingpin.v2"
 )
@@ -17,12 +17,9 @@ var (
 func main() {
 	kingpin.Parse()
 
-	sol1 := math.Abs(*result_solution - *solution2)
-	sol2 := math.Abs(*result_solution - *solution1)
-
-	output_volume_s1 := *volume * sol1 / (sol1 + sol2)
-	output_volume_s2 := *volume * sol2 / (sol1 + sol2)
+	output_volume_s1, output_volume_s2 := acid.AcidCrossCalculation(*solution1, *solution2, *result_solution, *volume)
 
 	fmt.Println("Solution 1: ", fmt.Sprintf("%.2f", output_volume_s1), " ml")
 	fmt.Println("Solution 2: ", fmt.Sprintf("%.2f", output_volume_s2), " ml")
+
 }
