@@ -8,13 +8,9 @@ import (
 	"fyne.io/fyne/app"
 	"fyne.io/fyne/container"
 	"fyne.io/fyne/widget"
-	"gopkg.in/alecthomas/kingpin.v2"
 )
 
 func main() {
-	kingpin.Parse()
-
-	//output_volume_s1, output_volume_s2 := acid.AcidCrossCalculation(*solution1, *solution2, *result_solution, *volume)
 
 	a := app.New()
 	win := a.NewWindow("Acid Interbend")
